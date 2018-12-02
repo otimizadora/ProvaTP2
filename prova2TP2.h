@@ -1,4 +1,5 @@
-//Sistema 1
+//Equacoes = Sistema 1
+//Equacoes2 = Sistema 2
 
 #include <iostream>
 #include <vector>
@@ -7,7 +8,7 @@
 using namespace std;
 
 class Equacoes{
-
+// n = 0 ; ys1 = y0 + h * Y(x0 , y0 , z0 , a , B2)
     vector<double> x , y , z;
 
 public:
@@ -70,9 +71,9 @@ void Equacoes::InitFuncs(){
     double B2 = 1.5;
     double g = 0.1;
     double RL = 0.002;
-    double X0 = 0.10;
+    double X0 = 0.1;
     double Y0 = 0.1;
-    double Z0 = 0;
+    double Z0 = 0.1;
     double T0 = 0;
     double h = 0.02;
     int n = 10000;
@@ -103,6 +104,64 @@ void Equacoes::Imprimi(){
     int tam = x.size();
     for(int i = 0 ; i < tam ; i++){
         cout << x[i] <<" "<< y[i] <<" "<< z[i]; 
+    }
+
+}
+
+class Equacoes2{
+
+    vector<double> xs , ys , zs;
+
+public:
+
+    void StartFunc();
+    void Print();
+
+};
+
+void Equacoes2::StartFunc(){
+
+    double a = 0.9259;
+    double B1 = 0.15;
+    double B2 = 1.5;
+    double g = 0.1;
+    double RL = 0.002;
+    double Xs0 = 0.1;
+    double Ys0 = 0.1;
+    double Zs0 = 0.1;
+    double T0 = 0;
+    double h = 0.02;
+    int n = 10000;
+    double xsn ,ysn ,zsn;
+    Equacoes eq; // Declaro um objeto da outra classe para ultilizar as funções da mesma.
+
+    xsn = Xs0; //para n = 0 ; xs(n + 1) = x(n + 1) ; xs1 = x1
+    ysn = Ys0 + h * eq.FunctionY(Xs0 , Ys0 , Zs0 , a , B2); // n = 0 ; ys1 = y0 + h * Y(x0 , y0 , z0 , a , B2)
+    zsn = Zs0; //para n = 0 ; zs(n + 1) = z(n + 1) ; z1 = z1
+    xs.push_back(xsn); ys.push_back(ysn); zs.push_back(zsn);
+
+    xsn = xsn; //para n = 1 ; xs(n + 1) = x(n + 1) ; xs2 = x2
+    ysn = ysn + h * eq.FunctionY(xsn , ysn , zsn , a , B2); // n = 1 ; ys2 = y1 + h * Y(x1 , y1 , z1 , a , B2)
+    zsn = zsn; //para n = 1 ; zs(n + 1) = z(n + 1) ; zs2 = z2
+    xs.push_back(xsn); ys.push_back(ysn); zs.push_back(zsn);
+
+    for(int i = 2 ; i <= n - 1 ; i++){
+
+        xsn = xsn;
+        ysn = ysn + h * eq.FunctionY(xsn , ysn , zsn , a , B2);
+        zsn = zsn;
+        xs.push_back(xsn); ys.push_back(ysn); zs.push_back(zsn);
+
+    } 
+
+}
+
+void Equacoes2::Print(){
+
+    int tam = xs.size();
+
+    for(int i = 0 ; i < tam ; i++){
+        cout << xs[i] << " " << ys[i] << " " << zs[i] << " ";
     }
 
 }

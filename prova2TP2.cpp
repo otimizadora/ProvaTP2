@@ -1,13 +1,14 @@
-//Sistema 1
+//Equacoes = Sistema 1
+//Equacoes2 = Sistema 2
 
 #include "prova2TP2.h"
 
 int main(){
 
-    Equacoes e;
+    Equacoes2 eq;
 
-    e.InitFuncs();
-    e.Imprimi();
+    eq.StartFunc();
+    eq.Print();
 
     return 0;
 }
