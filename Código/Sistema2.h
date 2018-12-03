@@ -15,13 +15,13 @@ class Sistema2 : public Sistema1{ //herança
 private:
     
 	//valores iniciais 
-    double Xs0 = 0;
-    double Ys0 = 0.03;
-    double Zs0 = 0;
-	double T0 = 0;
+    long double Xs0 = 0;
+    long double Ys0 = 0.03;
+    long double Zs0 = 0;
+	long double T0 = 0;
 public:
 	//Polimorfismo: Reescrevendo função do Sistema1 que tem mesmo nome, mas definições diferentes em cada sistema
-	void InitFuncs(vector<double> Xn,vector<double> Zn);
+	void InitFuncs(vector<long double> Xn,vector<long double> Zn);
 	// o resto herdo tudo da outra classe
 };
 
@@ -29,8 +29,8 @@ public:
 // Definição de classe Sistema 2.
 //--------------------------------------------------
 
-void Sistema2::InitFuncs(vector<double> Xn,vector<double> Zn){// recebe x e z do sistema 1
-	double Xsn ,Ysn ,Zsn;
+void Sistema2::InitFuncs(vector<long double> Xn,vector<long double> Zn){// recebe x e z do sistema 1
+	long double Xsn ,Ysn ,Zsn;
     //Inicializando com valores iniciais diferentes do sistema1
 	Xsn = Xs0;
     Ysn = Ys0;

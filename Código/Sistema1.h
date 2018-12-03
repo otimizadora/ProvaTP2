@@ -13,32 +13,32 @@ class Sistema1{
 private:
     
 	//valores iniciais 
-    double X0 = 0.1;
-    double Y0 = 0.1;
-    double Z0 = 0.1;
-	double T0 = 0;
+    long double X0 = 0.1;
+    long double Y0 = 0.1;
+    long double Z0 = 0.1;
+	long double T0 = 0;
 
-	double FunctionZ(double Yn , double Zn , double g , double RL);
-	double FunctionX(double Xn , double Yn , double a , double B1);
+	long double FunctionZ(long double Yn , long double Zn , long double g , long double RL);
+	long double FunctionX(long double Xn , long double Yn , long double a , long double B1);
 
 public: // tudo aqui a classe filha herda
-	vector<double> x , y , z;
+	vector<long double> x , y , z;
 	int n = 10000;
 	 
-	const double a = 0.9259;
-    const double B1 = 0.15;
-    const double B2 = 1.5;
-    const double g = 0.1;
-    const double RL = 0.002;
+	const long double a = 0.9259;
+    const long double B1 = 0.15;
+    const long double B2 = 1.5;
+    const long double g = 0.1;
+    const long double RL = 0.002;
     
-    double h = 0.02; //tamanho que se avança no tempo, deve ser pequeno, muito menor que 1
+    long double h = 0.02; //tamanho que se avança no tempo, deve ser pequeno, muito menor que 1
 
-    double FunctionF(double Xn);
-    double FunctionY(double Xn , double Yn , double Zn , double  a , double B2);
+    long double FunctionF(long double Xn);
+    long double FunctionY(long double Xn , long double Yn , long double Zn , long double  a , long double B2);
     
-    vector<double> getX();
-    vector<double> getY();
-	vector<double> getZ();
+    vector<long double> getX();
+    vector<long double> getY();
+	vector<long double> getZ();
 		
 	void InitFuncs();
 
@@ -47,33 +47,33 @@ public: // tudo aqui a classe filha herda
 //--------------------------------------------------
 // Definição de classe Sistema 1.
 //--------------------------------------------------
-vector<double> Sistema1::getX(){
+vector<long double> Sistema1::getX(){
 	return x;
 }
 
-vector<double> Sistema1::getY(){
+vector<long double> Sistema1::getY(){
 	return y;
 }
 
-vector<double> Sistema1::getZ(){
+vector<long double> Sistema1::getZ(){
 	return z;
 }
 		
-double Sistema1::FunctionF(double Xn){
+long double Sistema1::FunctionF(long double Xn){
 
-    double M0 = -0.7879;
-    double M1 = -1.4357;
-    double Bp = 1;
-    double F;
+    long double M0 = -0.7879;
+    long double M1 = -1.4357;
+    long double Bp = 1;
+    long double F;
 
     F = M0 * Xn + 0.5 * (M1 - M0) * (abs(Xn + Bp) - abs(Xn - Bp));
 
     return F;
 }
 
-double Sistema1::FunctionX(double Xn , double Yn , double a , double B1){
+long double Sistema1::FunctionX(long double Xn , long double Yn , long double a , long double B1){
 
-    double X;
+    long double X;
 
     X = (a * (Yn - Xn))/B1 - FunctionF(Xn)/B1;
 
@@ -81,9 +81,9 @@ double Sistema1::FunctionX(double Xn , double Yn , double a , double B1){
 
 }
 
-double Sistema1::FunctionY(double Xn , double Yn , double Zn , double a , double B2){
+long double Sistema1::FunctionY(long double Xn , long double Yn , long double Zn , long double a , long double B2){
 
-    double Y;
+    long double Y;
 
     Y = (a * (-Yn + Xn))/B2 + (Zn)/B2; 
 
@@ -91,9 +91,9 @@ double Sistema1::FunctionY(double Xn , double Yn , double Zn , double a , double
 
 }
 
-double Sistema1::FunctionZ(double Yn , double Zn , double g , double RL){
+long double Sistema1::FunctionZ(long double Yn , long double Zn , long double g , long double RL){
 
-    double Z;
+    long double Z;
 
     Z = (-Yn/g)-(RL * Zn)/g;
 
@@ -103,7 +103,7 @@ double Sistema1::FunctionZ(double Yn , double Zn , double g , double RL){
 
 void Sistema1::InitFuncs(){    
 
-    double xn ,yn ,zn;
+    long double xn ,yn ,zn;
 	//x1(posicão no vetor: "x[0]")=x0;
 	xn = X0;
     yn = Y0;

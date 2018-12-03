@@ -14,7 +14,7 @@
 
 class Acoplar{
 public:
-	vector<double> Xn , Yn , Zn, Xsn, Ysn, Zsn;
+	vector<long double> Xn , Yn , Zn, Xsn, Ysn, Zsn;
 	void Solve();
 	void Print();
 	
