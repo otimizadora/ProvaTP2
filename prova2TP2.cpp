@@ -9,10 +9,10 @@
 
 int main(){
 
-    Acoplar couple;
+    Acoplar coupling;
 
-    couple.Solve();
- 	couple.Print();
+    coupling.Solve();
+ 	coupling.Print();
 
     return 0;
 }
