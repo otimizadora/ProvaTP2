@@ -2,10 +2,18 @@
    Especificação 7-8 - Líder: Letícia
    Nomes: Letícia - Otávio - Anne Carolina - Antônio H.
    
-   Arquivo: prova2TP2.cpp
+   Arquivo: main.cpp
 */
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
 
-#include "prova2TP2.h"
+using namespace std;
+
+#include "Sistema1.h"
+#include "Sistema2.h"
+#include "Acoplar.h"
+
 
 int main(){
 
