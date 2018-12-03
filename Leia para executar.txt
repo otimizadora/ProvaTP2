@@ -1,1 +1,3 @@
-Para compilar: use g++ -std=c++11 exec -o main.cpp ou no Dev C++ no Windows: ADICIONAR -std=c++11 em ferramentas-> opções do compilador -> a linha de comando do linker
+* Para compilar: use g++ -std=c++11 exec -o main.cpp 
+
+* no Dev C++ no Windows: ADICIONAR -std=c++11 em ferramentas-> opções do compilador -> a linha de comando do linker
