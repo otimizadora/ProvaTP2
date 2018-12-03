@@ -1,14 +1,18 @@
-//Equacoes = Sistema 1
-//Equacoes2 = Sistema 2
+/* Trabalho-prova final modularidade
+   Especificação 7-8 - Líder: Letícia
+   Nomes: Letícia - Otávio - Anne Carolina - Antônio H.
+   
+   Arquivo: prova2TP2.cpp
+*/
 
 #include "prova2TP2.h"
 
 int main(){
 
-    Equacoes2 eq;
+    Acoplar couple;
 
-    eq.StartFunc();
-    eq.Print();
+    couple.Solve();
+ 	couple.Print();
 
     return 0;
 }
