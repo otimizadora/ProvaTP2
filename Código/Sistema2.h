@@ -1,17 +1,18 @@
 #ifndef SISTEMA2_H
 #define SISTEMA2_H
-/* Trabalho-prova final modularidade
-   Especificação 7-8 - Líder: Letícia
-   Nomes: Letícia - Otávio - Anne Carolina - Antônio H.
-   
-   Arquivo: Sistema2.h
-*/
+
+//Trabalho-prova final modularidade
+//   EspecificaÃ§Ã£o 7-8 - LÃ­der: LetÃ­cia
+//   Nomes: LetÃ­cia - 15/0015178
+//          OtÃ¡vio - 15/0143401
+//          Anne Carolina - 14/0016546
+//          Antonio H - 15/0118236
 #include "Sistema1.h"
 //--------------------------------------------------
-// Declaração de classe Sistema 2.
+// Declaraï¿½ï¿½o de classe Sistema 2.
 //--------------------------------------------------
 
-class Sistema2 : public Sistema1{ //herança
+class Sistema2 : public Sistema1{ //heranï¿½a
 private:
     
 	//valores iniciais 
@@ -20,13 +21,13 @@ private:
     long double Zs0 = 0;
 	long double T0 = 0;
 public:
-	//Polimorfismo: Reescrevendo função do Sistema1 que tem mesmo nome, mas definições diferentes em cada sistema
+	//Polimorfismo: Reescrevendo funÃ§Ã£o do Sistema1 que tem mesmo nome, mas definiÃ§Ãµes diferentes em cada sistema
 	void InitFuncs(vector<long double> Xn,vector<long double> Zn);
 	// o resto herdo tudo da outra classe
 };
 
 //--------------------------------------------------
-// Definição de classe Sistema 2.
+// DefiniÃ§Ã£o de classe Sistema 2.
 //--------------------------------------------------
 
 void Sistema2::InitFuncs(vector<long double> Xn,vector<long double> Zn){// recebe x e z do sistema 1

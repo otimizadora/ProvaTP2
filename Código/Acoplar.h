@@ -1,15 +1,17 @@
 #ifndef ACOPLAR_H
 #define ACOPLAR_H
-/* Trabalho-prova final modularidade
-   Especificação 7-8 - Líder: Letícia
-   Nomes: Letícia - Otávio - Anne Carolina - Antônio H.
-   
-   Arquivo: Acoplar.h
-*/
+
+//Trabalho-prova final modularidade
+//   EspecificaÃ§Ã£o 7-8 - LÃ­der: LetÃ­cia
+//   Nomes: LetÃ­cia - 15/0015178
+//          OtÃ¡vio - 15/0143401
+//          Anne Carolina - 14/0016546
+//          Antonio H - 15/0118236
+
 #include "Sistema1.h"
 #include "Sistema2.h"
 //--------------------------------------------------
-// Declaração de classe Acoplar.
+// DeclaraÃ§Ã£o de classe Acoplar.
 //--------------------------------------------------
 
 class Acoplar{
@@ -21,7 +23,7 @@ public:
 };
 
 //--------------------------------------------------
-// Definição de classe Acoplar.
+// DefiniÃ§Ã£o de classe Acoplar.
 //--------------------------------------------------
 
 void Acoplar::Solve(){
